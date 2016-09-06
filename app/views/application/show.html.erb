@@ -3,9 +3,11 @@
 </h1>
 
 <form action=<%= split_path %> method="GET">
-  Valor total da conta:
-  <input id="valorTotal" name="valorTotal" value=<%= @valorTotal%>> <br/>
-  Numero de pessoas a dividir:
+  Preço do item:
+  <input id="item" name="item" value=<%= @item%>> <br/>
+  Quantidade:
+  <input id="quantidade" name="quantidade" value=<%= @quantidade%>> <br/>
+  Número de pessoas a dividir:
   <input id="numPessoas" name="numPessoas" value=<%= @numPessoas%>>
   <input type="submit" class="btn btn-success" value="Split!">  <br/> <br/>
   Total para cada um: <%= @resposta %>
