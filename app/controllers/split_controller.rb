@@ -10,7 +10,7 @@ class SplitController < ApplicationController
     @item = params[:item].to_f
     @quantidade = params[:quantidade].to_i
     @numPessoas = params[:numPessoas].to_i
-    @resposta = @item*@quantidade/@numPessoas
+    @resposta = (@item*@quantidade/@numPessoas).round(2)
     render 'show'
   end
 end
