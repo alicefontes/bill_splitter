@@ -13,7 +13,7 @@ describe SplitController, type: :controller do
 		describe "split value" do
 			context "com parâmetros válidos" do
 				subject do
-					get :split_value, params: { :item => "40", :quantidade => "2", :numPessoas => "2" }
+					post :split_value, params: { :item => "40", :quantidade => "2", :numPessoas => "2" }
 				end
 
 				it "tudo ok?" do
@@ -33,12 +33,12 @@ describe SplitController, type: :controller do
 
 			context "com parâmetros inválidos" do
 				it "deveria retornar 0.0 se os parâmetros fossem vazios" do
-					get :split_value, params: { :item => "", :quantidade => "", :numPessoas => "" }
+					post :split_value, params: { :item => "", :quantidade => "", :numPessoas => "" }
 					expect(assigns(:resposta)).to eq 0.0
 				end
 
 				it "deveria retornar 0.0 sem parâmetros" do
-					get :split_value
+					post :split_value
 					expect(assigns(:resposta)).to eq 0.0
 				end
 			end
