@@ -6,9 +6,12 @@ class SplitController < ApplicationController
     @item = params[:item].to_f
     @quantidade = params[:quantidade].to_i
     @numPessoas = params[:numPessoas].to_i
-    if params[:quantidade] == nil || params[:numPessoas] == nil
+    if params[:quantidade].blank? || params[:numPessoas].blank?
       @resposta = 0.0
-    else @resposta = (@item*@quantidade/@numPessoas).round(2)
+    else
+      c = CalculadoraRuby::Calc.new
+      expression = "#{@item}*#{@quantidade}/#{@numPessoas}"
+      @resposta = c.calcular(expression)
     end
     render 'show'
   end

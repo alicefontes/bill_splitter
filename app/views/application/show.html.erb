@@ -2,15 +2,17 @@
   Bill Splitter!
 </h1>
 
-<div>
-<form action=<%= split_path %> method="GET">
-  Preço do item:
-  <input id="item" name="item" value=<%= @item%>> <br/>
-  Quantidade:
-  <input id="quantidade" name="quantidade" value=<%= @quantidade%>> <br/>
-  Número de pessoas a dividir:
-  <input id="numPessoas" name="numPessoas" value=<%= @numPessoas%>>
-  <input type="submit" class="btn" value="Split!">  <br/> <br/>
-  Total para cada um: <%= @resposta %>
-</form>
+<div style="font-size: 30px">
+  <form action=<%= split_path %> method="GET">
+    <label for="item_id">Preço do item:</label>
+    <input id="item_id" name="item" value="<%= @item %>" /> <br/>
+    <label for="quantidade_id">Quantidade:</label>
+    <input id="quantidade_id" name="quantidade" value="<%= @quantidade%>" /> <br/>
+    <label for="numPessoas_id">Número de pessoas a dividir:</label>
+    <input id="numPessoas_id" name="numPessoas" value="<%= @numPessoas%>" />
+    <input type="submit" class="btn" value="Split!">  <br/> <br/>
+    <span style="font-weight: bold; font-size: 15px;">
+      Total para cada um: <span style="color: red;"><%= @resposta %></span>
+    </span>
+  </form>
 </div>

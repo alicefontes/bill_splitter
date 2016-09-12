@@ -1,3 +1,8 @@
+PATH
+  remote: ../globo/calculadora_ruby
+  specs:
+    calculadora_ruby (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +196,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  calculadora_ruby!
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
