@@ -2,15 +2,14 @@ class SplitController < ApplicationController
   def show
   end
 
-  def test
-    return 2
-  end
-
   def split_value
     @item = params[:item].to_f
     @quantidade = params[:quantidade].to_i
     @numPessoas = params[:numPessoas].to_i
-    @resposta = (@item*@quantidade/@numPessoas).round(2)
+    if params[:quantidade] == nil || params[:numPessoas] == nil
+      @resposta = 0.0
+    else @resposta = (@item*@quantidade/@numPessoas).round(2)
+    end
     render 'show'
   end
 end
