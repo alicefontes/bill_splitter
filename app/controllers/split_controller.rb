@@ -11,7 +11,7 @@ class SplitController < ApplicationController
     else
       c = CalculadoraRuby::Calc.new
       expression = "#{@item}*#{@quantidade}/#{@numPessoas}"
-      @resposta = c.calcular(expression)
+      @resposta = (c.calcular(expression)).round(2)
     end
     render 'show'
   end
