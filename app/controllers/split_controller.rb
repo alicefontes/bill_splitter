@@ -6,6 +6,7 @@ class SplitController < ApplicationController
     @item = params[:item].to_f
     @quantity = params[:quantity].to_i
     @number_of_people_sharing = params[:number_of_people_sharing].to_i
+
     if params[:quantity].blank? || params[:number_of_people_sharing].blank?
       @answer = 0.0
     else
@@ -13,6 +14,7 @@ class SplitController < ApplicationController
       expression = "#{@item}*#{@quantity}/#{@number_of_people_sharing}"
       @answer = (c.calcular(expression)).round(2)
     end
+    
     render 'show'
   end
 end
