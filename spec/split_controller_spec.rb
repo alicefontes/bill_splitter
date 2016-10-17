@@ -1,46 +1,53 @@
 require 'rails_helper'
 
 describe SplitController, type: :controller do
-	describe "calculando" do
 
-		describe "show" do
-			it "tudo ok?" do
-				get :show
-				expect(response.status).to eq(200)
+	describe "show option" do
+		context "has 200 status code if requested" do
+		subject { response.status }
+
+		before { get :show }
+
+		it { is_expected.to eq 200 }
+		end
+	end
+
+	describe "split value" do
+		context "with valid params" do
+			subject { response.status }
+
+			before do
+				post :split_value, params: { :item => "40", :quantity => "2", :number_of_people_sharing => "2" }
+			end
+
+			context "has 200 status code if requested" do
+				it { is_expected.to eq 200 }
+			end
+
+			context "doing the math right" do
+				it { expect(assigns(:answer)).to eq 40 }
+			end
+
+			context "rendering" do
+				it { expect(subject).to render_template("show") }
 			end
 		end
 
-		describe "split value" do
-			context "com parâmetros válidos" do
-				subject do
-					post :split_value, params: { :item => "40", :quantidade => "2", :numPessoas => "2" }
-				end
-
-				it "tudo ok?" do
-					subject
-					expect(response.status).to eq(200)
-				end
-
-				it "fazendo a conta certo?" do
-					subject
-					expect(assigns(:resposta)).to eq 40
-				end
-
-				it "renderizando?" do
-					expect(subject).to render_template("show")
-				end
+		context "with invalid params" do
+			before do
+				post :split_value, params: { :item => "", :quantity => "", :number_of_people_sharing => "" }
 			end
 
-			context "com parâmetros inválidos" do
-				it "deveria retornar 0.0 se os parâmetros fossem vazios" do
-					post :split_value, params: { :item => "", :quantidade => "", :numPessoas => "" }
-					expect(assigns(:resposta)).to eq 0.0
+			context "should return 0.0 if the parameters are empty" do
+				it { expect(assigns(:answer)).to eq 0.0 }
+			end
+
+			context "should return 0.0 without parameters" do
+				before do
+					post :split_value
 				end
 
-				it "deveria retornar 0.0 sem parâmetros" do
-					post :split_value
-					expect(assigns(:resposta)).to eq 0.0
-				end
+				it { expect(assigns(:answer)).to eq 0.0}
 			end
 		end
 	end
