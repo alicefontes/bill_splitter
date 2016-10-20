@@ -14,7 +14,14 @@ class SplitController < ApplicationController
       expression = "#{@item}*#{@quantity}/#{@number_of_people_sharing}"
       @answer = (c.calcular(expression)).round(2)
     end
-    
+
+    render 'show'
+  end
+
+  def list
+    r = RestClient.get('http://localhost:8000/items')
+    @renderme = JSON.parse(r.body)
+
     render 'show'
   end
 end
