@@ -57,9 +57,9 @@
   </form>
 
   <% unless @single_product.nil? %>
-    <%= @single_product[:name] %>
-    <%= @single_product[:price] %>
-    <%= @single_product[:quantity] %>
-    <%= @single_product[:number_of_people_sharing] %>
+    Produto: <%= @single_product["name"] %> <br/>
+    Preço: <%= @single_product["price"] %> <br/>
+    Quantidade: <%= @single_product["quantity"] %> <br/>
+    Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %> <br/>
     <% end %>
 </div>
