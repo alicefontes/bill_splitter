@@ -28,8 +28,9 @@
 </br>
 </br>
 
-<div>
+<div style="font-size: 18px; font-family: Verdana;">
   <form action=<%= list_path %> method="GET">
+
     <input type="submit" class="btn" value="Show all"
     style="padding: 14px; font-family: Verdana; font-size: 15px;
     border-radius: 10px; background-color: #00a3cc; color: white;" />  <br/> <br/>
@@ -38,23 +39,27 @@
 <% unless @renderme.nil? %>
   <ul>
     <% @renderme.each do |item|%>
-      <li><%= item["name"] %></li>
+      <li><a id="item[id]" href="view"> <%= item["name"] %> </a></li>
     <% end %>
   </ul>
 <% end %>
 </div>
 
-<div>
+<div style="font-size: 18px; font-family: Verdana;">
   <form action=<%= view_path %> method="GET">
+
+    <label for="id">ID do item:</label>
+    <input id="id" name="id" value="<%= @id %>" />
+
     <input type="submit" class="btn" value="Display item"
     style="padding: 14px; font-family: Verdana; font-size: 15px;
     border-radius: 10px; background-color: #00a3cc; color: white;" />  <br/> <br/>
   </form>
 
   <% unless @single_product.nil? %>
-      <%= @single_product[:name] %>
-      <%= @single_product[:price] %>
-      <%= @single_product[:quantity] %>
-      <%= @single_product[:number_of_people_sharing] %>
-      <% end %>
+    <%= @single_product[:name] %>
+    <%= @single_product[:price] %>
+    <%= @single_product[:quantity] %>
+    <%= @single_product[:number_of_people_sharing] %>
+    <% end %>
 </div>
