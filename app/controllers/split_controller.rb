@@ -26,8 +26,8 @@ class SplitController < ApplicationController
   end
 
   def view
-    id = "57ea6b9a00d4f805b74603a0"
-    r = RestClient.get("http://localhost:8000/item/#{id}")
+
+    r = RestClient.get("http://localhost:8000/item/#{params[:item]}")
     @single_product = JSON.parse(r.body)
     render 'show'
   end

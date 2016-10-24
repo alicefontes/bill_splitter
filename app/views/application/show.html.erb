@@ -16,7 +16,7 @@
 
     <input type="submit" class="btn" value="Split!"
     style="padding: 14px; font-family: Verdana; font-size: 15px;
-    border-radius: 10px; background-color: #00a3cc; color: white;" />  <br/> <br/>
+    border-radius: 10px; background-color: #00a3cc; color: white;" />  
 
     <span style="font-weight: bold; font-size:20px;">
 
@@ -39,7 +39,7 @@
 <% unless @renderme.nil? %>
   <ul>
     <% @renderme.each do |item|%>
-      <li><a id="item[id]" href="view"> <%= item["name"] %> </a></li>
+      <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> </a></li>
     <% end %>
   </ul>
 <% end %>
@@ -47,14 +47,6 @@
 
 <div style="font-size: 18px; font-family: Verdana;">
   <form action=<%= view_path %> method="GET">
-
-    <label for="id">ID do item:</label>
-    <input id="id" name="id" value="<%= @id %>" />
-
-    <input type="submit" class="btn" value="Display item"
-    style="padding: 14px; font-family: Verdana; font-size: 15px;
-    border-radius: 10px; background-color: #00a3cc; color: white;" />  <br/> <br/>
-  </form>
 
   <% unless @single_product.nil? %>
     Produto: <%= @single_product["name"] %> <br/>
