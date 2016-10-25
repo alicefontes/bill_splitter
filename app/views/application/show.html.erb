@@ -3,10 +3,13 @@
 </h1>
 
 <div style="font-size: 18px; font-family: Verdana;">
-  <form action=<%= split_path %> method="POST">
+  <form action=<%= new_path %> method="POST">
 
-    <label for="item_id">Preço do item:</label>
-    <input id="item_id" name="item" value="<%= @item %>" /> <br/>
+    <label for="name_id">Nome do item:</label>
+    <input id="name_id" name="name" value="<%= @name %>" /> <br/>
+
+    <label for="price_id">Preço do item:</label>
+    <input id="price_id" name="price" value="<%= @price %>" /> <br/>
 
     <label for="quantity_id">Quantidade:</label>
     <input id="quantity_id" name="quantity" value="<%= @quantity%>" /> <br/>
@@ -16,7 +19,7 @@
 
     <input type="submit" class="btn" value="Split!"
     style="padding: 14px; font-family: Verdana; font-size: 15px;
-    border-radius: 10px; background-color: #00a3cc; color: white;" />  
+    border-radius: 10px; background-color: #00a3cc; color: white;" />
 
     <span style="font-weight: bold; font-size:20px;">
 
