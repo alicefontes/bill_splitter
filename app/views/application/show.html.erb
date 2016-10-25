@@ -4,33 +4,43 @@
 
 <div>
   <form action=<%= new_path %> method="POST">
-
-    <label for="name_id">Nome do item:</label>
-    <input id="name_id" name="name" value="<%= @name %>" />
-
-    <label for="price_id">Preço do item:</label>
-    <input id="price_id" name="price" value="<%= @price %>" />
-
-    <label for="quantity_id">Quantidade:</label>
-    <input id="quantity_id" name="quantity" value="<%= @quantity%>" />
-
-    <label for="number_of_people_sharing_id">Número de pessoas a dividir:</label>
-    <input id="number_of_people_sharing_id" name="number_of_people_sharing" value="<%= @number_of_people_sharing%>" />
-
-    <input type="submit" class="btn" value="Split!"/>
-
+    <div class="form_field">
+      <label for="name_id">Nome do item:</label>
+      <input class="input" id="name_id" name="name" value="<%= @name %>" />
+    </div>
+    <div class="form_field">
+      <label for="price_id">Preço do item:</label>
+      <input class="input" id="price_id" name="price" value="<%= @price %>" />
+    </div>
+    <div class="form_field">
+      <label for="quantity_id">Quantidade:</label>
+      <input class="input" id="quantity_id" name="quantity" value="<%= @quantity%>" />
+    </div>
+    <div class="form_field">
+      <label for="number_of_people_sharing_id">Número de pessoas:</label>
+      <input class="input" id="number_of_people_sharing_id" name="number_of_people_sharing" value="<%= @number_of_people_sharing%>" />
+    </div>
+    <div class="form_field">
+      <input type="submit" class="btn" value="Split!"/>
+    </div>
     <span>
-
-    Total para cada um: <span><%= @answer %></span>
-    </span>
+    <div class="form_field">
+      Total para cada um:
+    </div>
+    <div class="total">
+      <span><%= @answer %></span>
+      </span>
+  </div>
   </form>
 </div>
 
-<div>
+<div class="form_field">
   <form action=<%= list_path %> method="GET">
     <input type="submit" class="btn" value="Show all"/>
   </form>
+</div>
 
+<div class="list">
   <% unless @renderme.nil? %>
     <ul>
       <% @renderme.each do |item|%>
@@ -40,13 +50,13 @@
   <% end %>
 </div>
 
-<div>
+<div class="product">
   <form action=<%= view_path %> method="GET">
   <% unless @single_product.nil? %>
-    Produto: <%= @single_product["name"] %>
-    Preço: <%= @single_product["price"] %>
-    Quantidade: <%= @single_product["quantity"] %>
-    Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %>
+    Produto: <%= @single_product["name"] %><br/>
+    Preço: <%= @single_product["price"] %><br/>
+    Quantidade: <%= @single_product["quantity"] %><br/>
+    Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %><br/>
     <% end %>
   </form>
 </div>
