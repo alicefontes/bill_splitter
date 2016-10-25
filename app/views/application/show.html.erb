@@ -2,7 +2,7 @@
   Bill Splitter
 </h1>
 
-<div>
+<div class="items">
   <form action=<%= new_path %> method="POST">
     <div class="form_field">
       <label for="name_id">Nome do item:</label>
@@ -36,7 +36,7 @@
 
 <div class="form_field">
   <form action=<%= list_path %> method="GET">
-    <input type="submit" class="btn" value="Show all"/>
+    <input type="submit" class="show_btn" value="Show all"/>
   </form>
 </div>
 
@@ -44,7 +44,7 @@
   <% unless @renderme.nil? %>
     <ul>
       <% @renderme.each do |item|%>
-        <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> </a></li>
+        <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> - preço: R$ <%= item["price"]%>0</a></li>
       <% end %>
     </ul>
   <% end %>
