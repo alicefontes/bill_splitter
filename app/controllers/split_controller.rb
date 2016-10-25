@@ -33,4 +33,10 @@ class SplitController < ApplicationController
     @single_product = JSON.parse(r.body)
     render 'show'
   end
+
+  def delete
+    r = RestClient.delete("http://localhost:8000/item/#{params[:item]}")
+    JSON.parse(r.body)
+    render 'show'
+  end
 end

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/list', to: 'split#list'
   get '/view', to: 'split#view'
   post '/new', to: 'split#new'
+  delete '/delete', to: 'split#delete'
 end

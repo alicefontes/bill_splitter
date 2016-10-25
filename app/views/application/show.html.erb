@@ -39,13 +39,13 @@
     border-radius: 10px; background-color: #00a3cc; color: white;" />  <br/> <br/>
   </form>
 
-<% unless @renderme.nil? %>
-  <ul>
-    <% @renderme.each do |item|%>
-      <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> </a></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% unless @renderme.nil? %>
+    <ul>
+      <% @renderme.each do |item|%>
+        <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> </a></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 
 <div style="font-size: 18px; font-family: Verdana;">
@@ -57,4 +57,5 @@
     Quantidade: <%= @single_product["quantity"] %> <br/>
     Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %> <br/>
     <% end %>
+  </form>
 </div>
