@@ -5,39 +5,44 @@
 <div class="items">
   <form action=<%= new_path %> method="POST">
     <div class="form_field">
-      <label for="name_id">Nome do item:</label>
-      <input class="input" id="name_id" name="name" value="<%= @name %>" />
+      <!-- <label for="name_id">Nome do item:</label> -->
+      <input class="input" type="text" placeholder="Nome do item" id="name_id" name="name" value="<%= @name %>" />
     </div>
     <div class="form_field">
-      <label for="price_id">Preço do item:</label>
-      <input class="input" id="price_id" name="price" value="<%= @price %>" />
+      <!-- <label for="price_id">Preço do item:</label> -->
+      <input class="input" type="text" placeholder="Preço do item" id="price_id" name="price" value="<%= @price %>" />
     </div>
     <div class="form_field">
-      <label for="quantity_id">Quantidade:</label>
-      <input class="input" id="quantity_id" name="quantity" value="<%= @quantity%>" />
+      <!-- <label for="quantity_id">Quantidade:</label> -->
+      <input class="input" type="text" placeholder="Quantidade" id="quantity_id" name="quantity" value="<%= @quantity%>" />
     </div>
     <div class="form_field">
-      <label for="number_of_people_sharing_id">Número de pessoas:</label>
-      <input class="input" id="number_of_people_sharing_id" name="number_of_people_sharing" value="<%= @number_of_people_sharing%>" />
+      <!-- <label for="number_of_people_sharing_id">Número de pessoas:</label> -->
+      <input class="input" type="text" placeholder="Número de pessoas" id="number_of_people_sharing_id" name="number_of_people_sharing" value="<%= @number_of_people_sharing%>" />
     </div>
     <div class="form_field">
       <input type="submit" class="btn" value="Split!"/>
     </div>
     <span>
-    <div class="form_field">
-      Total para cada um:
+
+    <div class="value">
+      <span><%= @total %></span>
+      </span>
     </div>
-    <div class="total">
+
+    <div class="value">
       <span><%= @answer %></span>
       </span>
-  </div>
+    </div>
   </form>
 </div>
 
-<div class="form_field">
-  <form action=<%= list_path %> method="GET">
-    <input type="submit" class="show_btn" value="Show all"/>
-  </form>
+<div class="items">
+  <div class="form_field">
+    <form action=<%= list_path %> method="GET">
+      <input type="submit" class="show_btn" value="Show all"/>
+    </form>
+  </div>
 </div>
 
 <div class="list">

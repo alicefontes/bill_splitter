@@ -3,59 +3,69 @@
 body {
   font: 100% Avenir;
   font-weight: medium;
-  background-color: white;
+  background-color: #e2605D;
 }
 
 
 h1 {
-  margin: 50px 50px 50px 50px;
-  color: #82B6C6;
+  margin: 50px 0px 50px 0px;
+  color: white;
   text-align: center;
   font-size: 50px;
 }
 
 .items{
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
   margin: 10px 50px 0px 0px;
 }
 
-.list {
-  margin: 0px 50px 10px 50px;
-  color: #C477A7;
-  text-align: left;
-  padding: 50px;
+.form_field {
+  margin: 6px 0px 0px 50px;
+  line-height: 30px;
 }
 
-.list a {
-  color: black;
-  text-decoration: none;
-  line-height: 40px;
+.input {
+  padding: 13px;
+  font: 100% Avenir;
+  font-weight: medium;
+  font-size: 22px;
+  color: #CCC;
+  outline: none;
+
+}
+
+.value {
+  margin: 6px 0px 0px 50px;
+  line-height: 30px;
 }
 
 .btn {
   border: none;
-  margin: 10px 10px 10px 0px;
+  margin: 12px 0px 0px 0px;
   padding: 8px;
-  font-family: Verdana;
-  font-size: 15px;
+  width: 260px;
+  text-align: center;
+  font-size: 20px;
   border-radius: 10px;
-  background-color: #C477A7;
+  background-color: #82B6C6;
   color: white;
   outline: none;
 }
 
-.form_field {
-  margin: 10px 50px 0px 50px;
-  line-height: 30px;
-}
-
 .show_btn{
+  position: relative;
+  align-self: center;
   border: none;
-  margin: 30px 10px 0px 20px;
-  padding: 10px;
-  font-family: Verdana;
-  font-size: 15px;
+  line-height: 30px;
+  margin: 0px 0px 0px 0px;
+  padding: 8px;
+  width: 260px;
+  text-align: center;
+  font-size: 20px;
   border-radius: 10px;
-  background-color: black;
+  background-color: transparent;
   color: white;
   outline: none;
 }
@@ -72,10 +82,15 @@ h1 {
   color: #8A79BC;
 }
 
-.input {
-  font: 100% Avenir;
-  font-weight: medium;
-  font-size: 12px;
+.list {
+  margin: 0px 50px 10px 50px;
+  color: #C477A7;
+  text-align: left;
+  padding: 50px;
+}
+
+.list a {
   color: black;
-  outline: none;
+  text-decoration: none;
+  line-height: 40px;
 }
