@@ -1,0 +1,34 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Item selecionado
+</h2>
+
+<div class="product">
+  <form action=<%= view_path %> method="GET">
+  <% unless @single_product.nil? %>
+    Produto: <%= @single_product["name"] %><br/>
+    Preço: <%= @single_product["price"] %><br/>
+    Quantidade: <%= @single_product["quantity"] %><br/>
+    Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %><br/>
+    <% end %>
+  </form>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action=<%= list_path %> method="GET">
+      <input type="submit" class="show_btn" value="Voltar para produtos"/>
+    </form>
+  </div>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <input type="submit" class="show_btn" value="Início"/>
+    </form>
+  </div>
+</div>

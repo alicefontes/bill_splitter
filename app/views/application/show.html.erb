@@ -44,24 +44,3 @@
     </form>
   </div>
 </div>
-
-<div class="list">
-  <% unless @renderme.nil? %>
-    <ul>
-      <% @renderme.each do |item|%>
-        <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> - preço: R$ <%= item["price"]%>0</a></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
-
-<div class="product">
-  <form action=<%= view_path %> method="GET">
-  <% unless @single_product.nil? %>
-    Produto: <%= @single_product["name"] %><br/>
-    Preço: <%= @single_product["price"] %><br/>
-    Quantidade: <%= @single_product["quantity"] %><br/>
-    Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %><br/>
-    <% end %>
-  </form>
-</div>

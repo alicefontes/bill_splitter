@@ -26,13 +26,13 @@ class SplitController < ApplicationController
     r = RestClient.get('http://localhost:8000/items')
     @renderme = JSON.parse(r.body)
 
-    render 'show'
+    render 'list'
   end
 
   def view
     r = RestClient.get("http://localhost:8000/item/#{params[:item]}")
     @single_product = JSON.parse(r.body)
-    render 'show'
+    render 'view'
   end
 
   def delete

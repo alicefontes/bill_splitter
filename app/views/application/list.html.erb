@@ -1,0 +1,25 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Lista dos Produtos
+</h2>
+
+<div class="list">
+  <% unless @renderme.nil? %>
+    <ul>
+      <% @renderme.each do |item|%>
+        <li><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %> - preço: R$ <%= item["price"]%>0</a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <input type="submit" class="show_btn" value="Início"/>
+    </form>
+  </div>
+</div>

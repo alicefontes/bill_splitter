@@ -6,7 +6,6 @@ body {
   background-color: #e2605D;
 }
 
-
 h1 {
   margin: 50px 0px 50px 0px;
   color: white;
@@ -14,7 +13,7 @@ h1 {
   font-size: 50px;
 }
 
-.items{
+.items {
   text-align: center;
   align-items: center;
   font-size: 25px;
@@ -31,7 +30,7 @@ h1 {
   font: 100% Avenir;
   font-weight: medium;
   font-size: 22px;
-  color: #CCC;
+  color: black;
   outline: none;
 
 }
@@ -52,9 +51,10 @@ h1 {
   background-color: #82B6C6;
   color: white;
   outline: none;
+  font: 100% Avenir;
 }
 
-.show_btn{
+.show_btn {
   position: relative;
   align-self: center;
   border: none;
@@ -68,29 +68,17 @@ h1 {
   background-color: transparent;
   color: white;
   outline: none;
+  font: 100% Avenir;
 }
 
 .total {
   margin: 0px 50px 0px 40px;
   line-height: 30px;
-  color: #C477A7;
+  color: white;
 }
 
 .product {
   margin: -70px 50px 50px 50px;
   line-height: 30px;
   color: #8A79BC;
-}
-
-.list {
-  margin: 0px 50px 10px 50px;
-  color: #C477A7;
-  text-align: left;
-  padding: 50px;
-}
-
-.list a {
-  color: black;
-  text-decoration: none;
-  line-height: 40px;
 }
