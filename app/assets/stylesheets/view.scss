@@ -8,10 +8,13 @@
 //   text-align: center;
 // }
 
-.show_product {
-  padding: 20px 0px 20px 0px;
+.product_table {
   transform: translateX(-50%);
   margin-left: 50%;
+}
+
+.show_product {
+  padding: 20px 0px 20px 0px;
 
   table, th, td {
   border: 1px solid #e2605D;
@@ -31,7 +34,6 @@
     text-align: left;
     text-decoration: none;
     font-size: 24px;
-    text-decoration: none;
     color: white;
     background-color: #8A79BC;
   }
@@ -46,5 +48,25 @@
   table {
     border-color: #e2605D;
     text-decoration: none;
+  }
+}
+
+.back_btn {
+  border: none;
+  padding: 8px 4px 8px 4px;
+  width: 260px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #82B6C6;
+  color: white;
+  outline: none;
+  font-size: 20px;
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  font-family: inherit;
+
+  &:hover {
+    cursor: pointer;
   }
 }
