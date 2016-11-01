@@ -6,7 +6,7 @@
   Item selecionado
 </h2>
 
-<div class="product_x">
+<!-- <div class="product_x">
   <form action=<%= view_path %> method="GET">
   <% unless @single_product.nil? %>
     Produto: <%= @single_product["name"] %><br/>
@@ -15,21 +15,7 @@
     Número de pessoas a dividir: <%= @single_product["number_of_people_sharing"] %><br/>
     <% end %>
   </form>
-</div>
-
-<div class="btn_class">
-  <form action=<%= list_path %> method="GET">
-    <input type="submit" class="back_btn" value="Voltar para produtos"/>
-  </form>
-</div>
-
-<div class="btn_class">
-  <form action="/" method="GET">
-    <%= image_tag "home2.png", class: "home_image"%>
-    <input type="submit" class="initial_btn" value="Início"/>
-  </form>
-</div>
-
+</div> -->
 
 <div class="show_product">
   <table>
@@ -52,4 +38,17 @@
     </tr>
     <% end %>
   </table>
+</div>
+
+<div class="btn_class">
+  <form action=<%= list_path %> method="GET">
+    <input type="submit" class="back_btn" value="Voltar para produtos"/>
+  </form>
+</div>
+
+<div class="btn_class">
+  <form action="/" method="GET">
+    <%= image_tag "home2.png", class: "home_image"%>
+    <input type="submit" class="initial_btn" value="Início"/>
+  </form>
 </div>

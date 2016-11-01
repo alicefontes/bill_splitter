@@ -6,7 +6,7 @@
   Lista dos Produtos
 </h2>
 
-<div class="list">
+<!-- <div class="list">
   <% unless @renderme.nil? %>
     <ul>
       <% @renderme.each do |item|%>
@@ -14,16 +14,8 @@
       <% end %>
     </ul>
   <% end %>
-</div>
+</div> -->
 
-<div class="items">
-  <div class="form_field">
-    <form action="/" method="GET">
-      <%= image_tag "home2.png", class: "home_image"%>
-      <input type="submit" class="initial_btn" value="Início"/>
-    </form>
-  </div>
-</div>
 
 <div class="table_all">
   <table>
@@ -34,10 +26,19 @@
     <% unless @renderme.nil? %>
       <% @renderme.each do |item|%>
         <tr>
-          <td><a class="teste" id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %></a></td>
-          <td><span class="teste"> R$ <%= item["price"]%>0</span></td>
+          <td><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %></a></td>
+          <td><a id="item[id]" href="view?item=<%=item['id']%>"> R$ <%= item["price"]%>0</a></td>
         </tr>
       <% end %>
     <% end %>
   </table>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <%= image_tag "home2.png", class: "home_image"%>
+      <input type="submit" class="initial_btn" value="Início"/>
+    </form>
+  </div>
 </div>
