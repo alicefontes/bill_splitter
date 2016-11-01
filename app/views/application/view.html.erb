@@ -17,19 +17,39 @@
   </form>
 </div>
 
-<div class="items">
-  <div class="form_field">
-    <form action=<%= list_path %> method="GET">
-      <input type="submit" class="show_btn" value="Voltar para produtos"/>
-    </form>
-  </div>
+<div class="btn_class">
+  <form action=<%= list_path %> method="GET">
+    <input type="submit" class="back_btn" value="Voltar para produtos"/>
+  </form>
 </div>
 
-<div class="items">
-  <div class="form_field">
-    <form action="/" method="GET">
-      <%= image_tag "home2.png", class: "home_image"%>
-      <input type="submit" class="initial_btn" value="Início"/>
-    </form>
-  </div>
+<div class="btn_class">
+  <form action="/" method="GET">
+    <%= image_tag "home2.png", class: "home_image"%>
+    <input type="submit" class="initial_btn" value="Início"/>
+  </form>
+</div>
+
+
+<div class="show_product">
+  <table>
+    <% unless @single_product.nil? %>
+    <tr>
+      <th>Produto</th>
+      <td><%= @single_product["name"] %></td>
+    </tr>
+    <tr>
+      <th>Preço</th>
+      <td><%= @single_product["price"] %></td>
+    </tr>
+    <tr>
+      <th>Quantidade</th>
+      <td><%= @single_product["quantity"] %></td>
+    </tr>
+    <tr>
+      <th>Número de pessoas</th>
+      <td><%= @single_product["number_of_people_sharing"] %></td>
+    </tr>
+    <% end %>
+  </table>
 </div>

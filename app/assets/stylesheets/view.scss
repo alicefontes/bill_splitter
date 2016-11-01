@@ -17,3 +17,36 @@
     cursor: pointer;
   }
 }
+
+.show_product {
+  transform: translateX(-50%);
+  margin-left: 50%;
+
+  table, th, td {
+  border: 5px solid white;
+  color: #8A79BC;
+  text-decoration: none;
+  }
+
+  td {
+   text-align: left;
+   text-decoration: none;
+  }
+
+  th {
+    text-decoration: none;
+  }
+
+  td, th {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+  }
+
+  table {
+    border-color: #e2605D;
+    text-decoration: none;
+  }
+}

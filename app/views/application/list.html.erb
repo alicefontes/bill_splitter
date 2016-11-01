@@ -24,3 +24,20 @@
     </form>
   </div>
 </div>
+
+<div class="table_all">
+  <table>
+    <tr>
+      <th>Produto</th>
+      <th>Preço</th>
+    </tr>
+    <% unless @renderme.nil? %>
+      <% @renderme.each do |item|%>
+        <tr>
+          <td><a class="teste" id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %></a></td>
+          <td><span class="teste"> R$ <%= item["price"]%>0</span></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
