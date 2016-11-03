@@ -1,0 +1,48 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Item Adicionado
+</h2>
+
+<div class="show_product">
+  <table class="product_table">
+    <tr>
+      <th>Preço</th>
+      <td><%= @price %></td>
+    </tr>
+    <tr>
+      <th>Quantidade</th>
+      <td><%= @quantity %></td>
+    </tr>
+    <tr>
+      <th>Número de pessoas</th>
+      <td><%= @number_of_people_sharing %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="value">
+  <table class="value_table">
+    <tr>
+      <td><%= @total %></td>
+    </tr>
+    <tr>
+      <th><%= @answer %></th>
+    </tr>
+  </table>
+</div>
+
+<div class="btn_class">
+  <form action=<%= list_path %> method="GET">
+    <input type="submit" class="back_btn" value="Ver lista de produtos"/>
+  </form>
+</div>
+
+<div class="btn_class">
+  <form action="/" method="GET">
+    <%= image_tag "home2.png", class: "home_image"%>
+    <input type="submit" class="initial_btn" value="Início"/>
+  </form>
+</div>

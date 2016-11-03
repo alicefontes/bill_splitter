@@ -19,7 +19,7 @@ class SplitController < ApplicationController
     r = RestClient.post "http://localhost:8000/items" , name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
     JSON.parse(r.body)
 
-    render 'show'
+    render 'newproduct'
   end
 
   def list
