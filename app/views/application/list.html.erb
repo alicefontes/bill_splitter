@@ -28,6 +28,8 @@
         <tr>
           <td><a id="item[id]" href="view?item=<%=item['id']%>"> <%= item["name"] %></a></td>
           <td><a id="item[id]" href="view?item=<%=item['id']%>"> R$ <%= item["price"]%>0</a></td>
+          <td><%= link_to "Delete", delete_path(item: item["id"]), method: :delete %></td>
+
         </tr>
       <% end %>
     <% end %>
