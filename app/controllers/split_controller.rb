@@ -37,7 +37,19 @@ class SplitController < ApplicationController
 
   def delete
     RestClient.delete("http://localhost:8000/item/#{params[:item]}")
-    # JSON.parse(r.body)
     render 'deleted'
+  end
+
+  def edit
+    r = RestClient.get("http://localhost:8000/item/#{params[:item]}")
+    @single_product = JSON.parse(r.body)
+    render 'editor'
+  end
+
+  def save_edit
+    r = RestClient.put "http://localhost:8000/item/#{params[:item]}" , name: params[:new_name], price: params[:new_price], quantity: params[:new_quantity], number_of_people_sharing: params[:new_number_of_people_sharing]
+    puts JSON.parse(r.body)
+
+    redirect_to view_path(item: params[:item])
   end
 end

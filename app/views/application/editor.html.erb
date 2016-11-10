@@ -1,0 +1,42 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Editando Produto
+</h2>
+
+<div class="items">
+  <form action=<%= save_edit_path(item: @single_product['id']) %> method="POST">
+    <input type="hidden" name="_method" value="put" />
+    <div class="form_field">
+      <!-- <label for="name_id">Nome do item:</label> -->
+      <input class="input" type="text" placeholder="Nome do item" id="new_name_id" name="new_name" value="<%= @single_product['name'] %>" />
+    </div>
+    <div class="form_field">
+      <!-- <label for="price_id">Preço do item:</label> -->
+      <input class="input" type="text" placeholder="Preço do item" id="new_price_id" name="new_price" value="<%= @single_product['price'] %>" />
+    </div>
+    <div class="form_field">
+      <!-- <label for="quantity_id">Quantidade:</label> -->
+      <input class="input" type="text" placeholder="Quantidade" id="new_quantity_id" name="new_quantity" value="<%= @single_product['quantity'] %>" />
+    </div>
+    <div class="form_field">
+      <!-- <label for="number_of_people_sharing_id">Número de pessoas:</label> -->
+      <input class="input" type="text" placeholder="Número de pessoas" id="new_number_of_people_sharing_id" name="new_number_of_people_sharing" value="<%= @single_product['number_of_people_sharing'] %>" />
+    </div>
+    <div class="form_field">
+      <input type="submit" class="btn" value="Salvar alterações"/>
+    </div>
+    <span>
+  </form>
+</div>
+
+<!-- <div class="items">
+  <div class="form_field">
+    <form action=<%= list_path %> method="GET">
+      <%= image_tag "orange-beer-256.png", class: "home_image"%>
+      <input type="submit" class="show_btn" value="Ver produtos"/>
+    </form>
+  </div>
+</div> -->
