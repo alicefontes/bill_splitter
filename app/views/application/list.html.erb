@@ -28,8 +28,8 @@
         <tr>
           <td><a id="item[id]" href="<%= view_path(item: item['id']) %>"> <%= item["name"] %></a></td>
           <td><a id="item[id]" href="<%= view_path(item: item['id']) %>"> R$ <%= item["price"]%>0</a></td>
-          <td><%= link_to "Deletar", delete_path(item: item["id"]), method: :delete %></td>
-          <td><%= link_to "Editar", edit_path(item: item["id"]) %></td>
+          <td class="option"><%= link_to "Editar", edit_path(item: item["id"]) %></td>
+          <td class="option"><%= link_to "Deletar", delete_path(item: item["id"]), method: :delete %></td>
         </tr>
       <% end %>
     <% end %>

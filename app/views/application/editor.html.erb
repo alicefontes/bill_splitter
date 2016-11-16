@@ -6,27 +6,29 @@
   Editando Produto
 </h2>
 
+</br>
+
 <div class="items">
   <form action=<%= save_edit_path(item: @single_product['id']) %> method="POST">
     <input type="hidden" name="_method" value="put" />
-    <div class="form_field">
+    <div class="form_field"><div class="label">Nome do item</div>
       <!-- <label for="name_id">Nome do item:</label> -->
-      <input class="input" type="text" placeholder="Nome do item" id="new_name_id" name="new_name" value="<%= @single_product['name'] %>" />
+      <input class="input2" type="text" placeholder="Nome do item" id="new_name_id" name="new_name" value="<%= @single_product['name'] %>" />
     </div>
-    <div class="form_field">
+    <div class="form_field"><div class="label">Preço</div>
       <!-- <label for="price_id">Preço do item:</label> -->
-      <input class="input" type="text" placeholder="Preço do item" id="new_price_id" name="new_price" value="<%= @single_product['price'] %>" />
+      <input class="input2" type="text" placeholder="Preço do item" id="new_price_id" name="new_price" value="<%= @single_product['price'] %>" />
     </div>
-    <div class="form_field">
+    <div class="form_field"><div class="label">Quantidade</div>
       <!-- <label for="quantity_id">Quantidade:</label> -->
-      <input class="input" type="text" placeholder="Quantidade" id="new_quantity_id" name="new_quantity" value="<%= @single_product['quantity'] %>" />
+      <input class="input2" type="text" placeholder="Quantidade" id="new_quantity_id" name="new_quantity" value="<%= @single_product['quantity'] %>" />
     </div>
-    <div class="form_field">
+    <div class="form_field"><div class="label">Número de pessoas</div>
       <!-- <label for="number_of_people_sharing_id">Número de pessoas:</label> -->
-      <input class="input" type="text" placeholder="Número de pessoas" id="new_number_of_people_sharing_id" name="new_number_of_people_sharing" value="<%= @single_product['number_of_people_sharing'] %>" />
+      <input class="input2" type="text" placeholder="Número de pessoas" id="new_number_of_people_sharing_id" name="new_number_of_people_sharing" value="<%= @single_product['number_of_people_sharing'] %>" />
     </div>
-    <div class="form_field">
-      <input type="submit" class="btn" value="Salvar alterações"/>
+    <div class="form_field"></br>
+      <input type="submit" class="btn_save" value="Salvar alterações"/>
     </div>
     <span>
   </form>

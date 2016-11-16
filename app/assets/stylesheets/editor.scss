@@ -1,0 +1,33 @@
+.label {
+  color: white;
+  opacity: 0.3;
+  margin: 10px 0px 4px 0px;
+  font-size: 22px;
+}
+
+.btn_save {
+  border: none;
+  margin: 0px 0px 20px 0px;
+  padding: 8px;
+  width: 260px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #82B6C6;
+  color: white;
+  outline: none;
+  font: 100% Avenir;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.input2 {
+  padding: 9px;
+  font: 100% Avenir;
+  font-weight: medium;
+  font-size: 19px;
+  color: black;
+  outline: none;
+}
