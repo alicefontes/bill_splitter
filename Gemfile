@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pg'
+
 group :development, :test do
  gem 'rspec-rails', '~> 3.5'
  gem 'pry'
