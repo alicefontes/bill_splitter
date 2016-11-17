@@ -1,5 +1,6 @@
-PATH
-  remote: ../globo/calculadora_ruby
+GIT
+  remote: git://github.com/alicefontes/calculadora_ruby.git
+  revision: 4599554e4274f037bd5aac9df56beb232467a41d
   specs:
     calculadora_ruby (0.1.0)
 
