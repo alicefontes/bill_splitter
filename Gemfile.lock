@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/alicefontes/calculadora_ruby.git
-  revision: 4599554e4274f037bd5aac9df56beb232467a41d
+  revision: e13e2edce363bdfed1be593a4add33b3a57cb214
   specs:
     calculadora_ruby (0.1.0)
 
