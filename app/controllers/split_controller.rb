@@ -16,7 +16,7 @@ class SplitController < ApplicationController
       @answer = "Total para cada um: #{(c.calcular(expression)).round(2)}"
     end
 
-    r = RestClient.post "http://localhost:8000/items" , name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
+    r = RestClient.post "https://infinite-meadow-93515.herokuapp.com/items" , name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
     JSON.parse(r.body)
 
     render 'newproduct'
