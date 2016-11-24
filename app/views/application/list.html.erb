@@ -25,16 +25,37 @@
       <th class="option">Editar</th>
       <th class="option">Excluir</th>
     </tr>
+    <% @listtotal = 0 %>
+    <% @totalpeople = 0 %>
     <% unless @renderme.nil? %>
       <% @renderme.each do |item|%>
         <tr>
           <td><a id="item[id]" href="<%= view_path(item: item['id']) %>"> <%= item["name"] %></a></td>
+            <% @totalpeople = @totalpeople + item["number_of_people_sharing"] %>
           <td><a id="item[id]" href="<%= view_path(item: item['id']) %>"> R$ <%= item["price"]%>0</a></td>
+            <% @listtotal = @listtotal + item["price"] %>
           <td class="option"><%= link_to "✏️", edit_path(item: item["id"]) %></td>
           <td class="option"><%= link_to "🗑", delete_path(item: item["id"]), method: :delete %></td>
         </tr>
       <% end %>
     <% end %>
+  </table>
+</div>
+
+<div class="value">
+  <table class="value_table">
+    <tr>
+      <td>Total a pagar: R$ <%= @listtotal %>0</td>
+    </tr>
+    <tr>
+      <td>Total com 10%: R$ <%= (@listtotal*1.1).round(2) %></td>
+    </tr>
+    <tr>
+      <td>Total por pessoa: R$ <%= (@listtotal/@totalpeople).round(2) %></td>
+    </tr>
+    <tr>
+      <td>Total por pessoa com 10%: R$ <%= ((@listtotal*1.1)/@totalpeople).round(2) %></td>
+    </tr>
   </table>
 </div>
 
