@@ -42,8 +42,19 @@
   </table>
 </div>
 
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <input type="submit" class="back_btn" value="Cadastrar novo produto"/>
+    </form>
+  </div>
+</div>
+
 <div class="value">
   <table class="value_table">
+    <tr>
+      <th>Fechar conta</th>
+    </tr>
     <tr>
       <td>Total a pagar: R$ <%= @listtotal %>0</td>
     </tr>
@@ -57,12 +68,4 @@
       <td>Total por pessoa com 10%: R$ <%= ((@listtotal*1.1)/@totalpeople).round(2) %></td>
     </tr>
   </table>
-</div>
-
-<div class="items">
-  <div class="form_field">
-    <form action="/" method="GET">
-      <input type="submit" class="back_btn" value="Cadastrar novo produto"/>
-    </form>
-  </div>
 </div>
