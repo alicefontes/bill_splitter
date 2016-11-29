@@ -24,9 +24,9 @@ class SplitController < ApplicationController
   end
 
   def list
-    r = RestClient.get('https://infinite-meadow-93515.herokuapp.com/items')
+    # r = RestClient.get('https://infinite-meadow-93515.herokuapp.com/items')
     # r = RestClient.get('http://localhost:8000/items')
-    # r = RestClient.get('#{Rails.application.config_for(:url)}/items')
+    r = RestClient.get('Settings.url/items')
     @renderme = JSON.parse(r.body)
 
     render 'list'
