@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
+gem 'webmock'
+gem 'typhoeus'
+gem 'sqlite3'
 gem 'config'
 gem 'pg'
 
 group :development, :test do
+ gem 'vcr'
  gem 'rb-readline'
  gem 'rspec-rails', '~> 3.5'
  gem 'pry'
