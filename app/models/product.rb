@@ -9,21 +9,21 @@ class Product < ApplicationRecord
     JSON.parse(r.body)
   end
 
-  def self.visualize
+  def self.visualize params
     r = RestClient.get("#{Settings.url}/item/#{params[:item]}")
     JSON.parse(r.body)
   end
 
-  def self.exclude
+  def self.exclude params
     RestClient.delete("#{Settings.url}/item/#{params[:item]}")
   end
 
-  def self.editing
+  def self.editing params
     r = RestClient.get("#{Settings.url}/item/#{params[:item]}")
     JSON.parse(r.body)
   end
 
-  def self.save_edition
+  def self.save_edition params
     r = RestClient.put "#{Settings.url}/item/#{params[:item]}", name: params[:new_name], price: params[:new_price], quantity: params[:new_quantity], number_of_people_sharing: params[:new_number_of_people_sharing]
     puts JSON.parse(r.body)
   end
