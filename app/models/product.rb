@@ -21,6 +21,7 @@ class Product < ApplicationRecord
   def self.editing item
     r = RestClient.get("#{Settings.url}/item/#{item}")
     JSON.parse(r.body)
+    # JSON.parse(RestClient.get("#{Settings.url}/item/#{item}").body)
   end
 
   def self.save_edition params
