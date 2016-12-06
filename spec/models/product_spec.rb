@@ -5,25 +5,67 @@ require 'vcr_setup'
 RSpec.describe Product, type: :model do
 
 	describe "basic test" do
-		context "ok?" do
+		context "new product ok?" do
 			let :produto do
 				Rails.env = "test"
-				VCR.use_cassette('teste2') do
+				VCR.use_cassette('teste_new') do
           Product.new_product name: "alo", quantity: 2, price: 20, number_of_people_sharing: 2
 				end
 			end
 
-			#
-			# it 'records an http request', :vcr do
-			# 	expect(make_http_request).to eq(200)
-			# end
-
 			it 'verifies an http request' do
 				expect(produto.empty?).to eq(false)
 			end
+
+      it 'verifies name' do
+        expect(produto["name"]).to eq("alo")
+      end
+		end
+
+    context "show all ok?" do
+			let :products do
+				Rails.env = "test"
+				VCR.use_cassette('teste_all') do
+          Product.all
+				end
+			end
+
+			it 'verifies an http request' do
+				expect(products.empty?).to eq(false)
+			end
+      # it 'verifies name' do
+      #   expect(produtos).to eq()
+      # end
 		end
 	end
 
+  context "show all ok?" do
+    let :shown_product do
+      Rails.env = "test"
+      VCR.use_cassette('show_one_product') do
+        Product.visualize "5833583505c1fa00040fecc1"
+      end
+    end
+
+    it 'verifies an http request' do
+      expect(shown_product["id"]).to eq("5833583505c1fa00040fecc1")
+    end
+  end
+
+  context "show all ok?" do
+    let :product_deleted do
+      Rails.env = "test"
+      VCR.use_cassette('delete_product') do
+        Product.exclude "5833583505c1fa00040fecc1"
+      end
+    end
+
+    it 'verifies an http request' do
+      expect(product_deleted["id"]).to eq(nil)
+    end
+  end
+
+end
 
 	# describe "show option" do
 	# 	context "has 200 status code if requested" do
@@ -74,4 +116,3 @@ RSpec.describe Product, type: :model do
 	# 		end
 	# 	end
 	# end
-end

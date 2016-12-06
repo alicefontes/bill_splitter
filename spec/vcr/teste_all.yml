@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://infinite-meadow-93515.herokuapp.com//items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.0p0
+      Host:
+      - infinite-meadow-93515.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 06 Dec 2016 19:27:37 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"36887bb0b93b9626480106f6c012afa0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 146f37e3-f1a0-48fb-a5f4-71d0aaf5d6b3
+      X-Runtime:
+      - '0.014265'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5833583505c1fa00040fecc1","price":8.0,"number_of_people_sharing":2,"quantity":4,"name":"Coxinha
+        da Ofner"},{"id":"583c703a2dceb80004af9040","price":60.0,"number_of_people_sharing":2,"quantity":1,"name":"Costela"},{"id":"583c72232dceb80004af9041","price":10.0,"number_of_people_sharing":2,"quantity":5,"name":"Cerveja"},{"id":"583c72ad2dceb80004af9042","price":17.0,"number_of_people_sharing":2,"quantity":3,"name":"Caipi"},{"id":"583da840ec440f00049efcec","price":122.0,"number_of_people_sharing":2,"quantity":13,"name":"Biscoito"},{"id":"583da840ec440f00049efced","price":10.35,"number_of_people_sharing":2,"quantity":1,"name":"Biscoito"},{"id":"5846d1e02cd96e0004f98b33","price":25.0,"number_of_people_sharing":7,"quantity":3,"name":"banana"},{"id":"58470dfd8f62950004ac400d","price":20.0,"number_of_people_sharing":2,"quantity":2,"name":"alo"},{"id":"584711298f62950004ac400e","price":20.0,"number_of_people_sharing":2,"quantity":2,"name":"alo"}]'
+    http_version: 
+  recorded_at: Tue, 06 Dec 2016 19:27:38 GMT
+recorded_with: VCR 3.0.3
