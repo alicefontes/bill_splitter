@@ -4,26 +4,15 @@ require 'vcr_setup'
 
 RSpec.describe Product, type: :model do
 
-	# def make_http_request
-	#   RestClient.get("https://serene-ocean-20887.herokuapp.com/")
-	# end
-
 	describe "basic test" do
 		context "ok?" do
 			let :produto do
 				Rails.env = "test"
-				VCR.use_cassette('teste') do
-					# ENV["RAILS_ENV"] = 'development'
-
-					get :list
-					# if Rails.env == "development"
-					# get :list
-					# end
+				VCR.use_cassette('teste2') do
+          Product.new_product name: "alo", quantity: 2, price: 20, number_of_people_sharing: 2
 				end
 			end
-			# VCR.use_cassette('teste') do
-			#
-			# end
+
 			#
 			# it 'records an http request', :vcr do
 			# 	expect(make_http_request).to eq(200)
