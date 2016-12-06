@@ -4,26 +4,31 @@ require 'vcr_setup'
 
 describe ProductController, type: :controller do
 
-	def make_http_request
-	  RestClient.get("https://serene-ocean-20887.herokuapp.com/")
-	end
+	# def make_http_request
+	#   RestClient.get("https://serene-ocean-20887.herokuapp.com/")
+	# end
 
 	describe "basic test" do
 		context "ok?" do
-
+			let :produto do
+				VCR.use_cassette('teste') do
+					RestClient.get("https://serene-ocean-20887.herokuapp.com/")
+				end
+			end
 			# VCR.use_cassette('teste') do
 			#
 			# end
+			#
+			# it 'records an http request', :vcr do
+			# 	expect(make_http_request).to eq(200)
+			# end
 
-			it 'records an http request', :vcr do
-				expect(make_http_request).to eq(200)
-			end
-
-			it 'verifies an http request', :vcr do
-				expect(make_http_request.empty?).to eq(false)
+			it 'verifies an http request' do
+				expect(produto.empty?).to eq(false)
 			end
 		end
 	end
+
 
 	# describe "show option" do
 	# 	context "has 200 status code if requested" do
