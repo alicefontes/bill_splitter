@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  def self.new_product
+  def self.new_product params
     r = RestClient.post "#{Settings.url}/items", name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
     JSON.parse(r.body)
   end
@@ -9,17 +9,17 @@ class Product < ApplicationRecord
     JSON.parse(r.body)
   end
 
-  def self.visualize params
-    r = RestClient.get("#{Settings.url}/item/#{params[:item]}")
+  def self.visualize item
+    r = RestClient.get("#{Settings.url}/item/#{item}")
     JSON.parse(r.body)
   end
 
-  def self.exclude params
-    RestClient.delete("#{Settings.url}/item/#{params[:item]}")
+  def self.exclude item
+    RestClient.delete("#{Settings.url}/item/#{item}")
   end
 
-  def self.editing params
-    r = RestClient.get("#{Settings.url}/item/#{params[:item]}")
+  def self.editing item
+    r = RestClient.get("#{Settings.url}/item/#{item}")
     JSON.parse(r.body)
   end
 

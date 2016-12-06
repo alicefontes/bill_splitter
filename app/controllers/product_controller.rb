@@ -16,9 +16,7 @@ class ProductController < ApplicationController
       @answer = "Total para cada um: #{(c.calcular(expression)).round(2)}"
     end
 
-    r = RestClient.post "#{Settings.url}/items", name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
-    @prod = JSON.parse(r.body)
-
+    @prod = Product.new_product params
     render 'newproduct'
   end
 
@@ -28,17 +26,17 @@ class ProductController < ApplicationController
   end
 
   def view
-    @single_product = Product.visualize params
+    @single_product = Product.visualize params[:item]
     render 'view'
   end
 
   def delete
-    Product.exclude params
+    Product.exclude params[:item]
     render 'deleted'
   end
 
   def edit
-    @single_product = Product.editing params
+    @single_product = Product.editing params[:item]
     render 'editor'
   end
 
