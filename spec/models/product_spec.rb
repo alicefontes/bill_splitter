@@ -11,7 +11,7 @@ RSpec.describe Product, type: :model do
 	describe "basic test" do
 		context "new product ok?" do
 			let :produto do
-				VCR.use_cassette('teste_new') do
+				VCR.use_cassette('new_product') do
           Product.new_product name: "alo", quantity: 2, price: 20, number_of_people_sharing: 2
 				end
 			end
@@ -20,7 +20,7 @@ RSpec.describe Product, type: :model do
 				expect(produto.empty?).to eq(false)
 			end
 
-      it 'verifies not empty' do
+      it 'verifies name' do
         expect(produto["name"]).to eq("alo")
       end
 		end
@@ -35,10 +35,34 @@ RSpec.describe Product, type: :model do
 			it 'verifies not empty' do
 				expect(products.empty?).to eq(false)
 			end
-      # it 'verifies name' do
-      #   expect(produtos).to eq()
-      # end
-      #o que eu preciso verificar aqui?
+
+#se eu fizer algo p checar os nomes, cada vez que o banco mudasse o teste iria quebrar
+#melhor testar apenas se nao é vazia e se as quantidades sao > 0
+      it 'verifies not empty list' do
+        a = 0
+        products.each do |p|
+          a = a+1
+        end
+        expect(a).to be > 0
+      end
+
+      it 'verifies quantity != 0' do
+        products.each do |p|
+          expect(p["quantity"]).to be > 0
+        end
+      end
+
+      it 'verifies number_of_people_sharing != 0' do
+        products.each do |p|
+          expect(p["number_of_people_sharing"]).to be > 0
+        end
+      end
+
+      it 'verifies price != 0' do
+        products.each do |p|
+          expect(p["price"]).to be > 0
+        end
+      end
 		end
 	end
 

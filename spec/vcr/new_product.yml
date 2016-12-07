@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://infinite-meadow-93515.herokuapp.com//items
+    body:
+      encoding: UTF-8
+      string: name=alo&price=20&quantity=2&number_of_people_sharing=2
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.0p0
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - infinite-meadow-93515.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 07 Dec 2016 19:29:22 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"da10a2b49aabded188bcd78955898f41"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7be5c3cd-ef8f-4ba6-bba1-2356ed0f6c1d
+      X-Runtime:
+      - '0.111133'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"5848631222c294000448539b","price":20.0,"number_of_people_sharing":2,"quantity":2,"name":"alo"}'
+    http_version: 
+  recorded_at: Wed, 07 Dec 2016 19:29:25 GMT
+recorded_with: VCR 3.0.3
