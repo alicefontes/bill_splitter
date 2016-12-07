@@ -23,6 +23,18 @@ RSpec.describe Product, type: :model do
       it 'verifies name' do
         expect(produto["name"]).to eq("alo")
       end
+
+      it 'verifies price' do
+        expect(produto["price"]).to eq(20)
+      end
+
+      it 'verifies quantity' do
+        expect(produto["quantity"]).to eq(2)
+      end
+
+      it 'verifies number_of_people_sharing' do
+        expect(produto["number_of_people_sharing"]).to eq(2)
+      end
 		end
 
     context "show all ok?" do
@@ -36,7 +48,7 @@ RSpec.describe Product, type: :model do
 				expect(products.empty?).to eq(false)
 			end
 
-#se eu fizer algo p checar os nomes, cada vez que o banco mudasse o teste iria quebrar
+#se fizer algo p checar os nomes, cada vez que o banco mudasse o teste iria quebrar
 #melhor testar apenas se nao é vazia e se as quantidades sao > 0
       it 'verifies not empty list' do
         a = 0
@@ -75,6 +87,18 @@ RSpec.describe Product, type: :model do
 
     it 'verifies show' do
       expect(shown_product["id"]).to eq("5833583505c1fa00040fecc1")
+    end
+
+    it 'verifies quantity != 0' do
+      expect(shown_product["quantity"]).to be > 0
+    end
+
+    it 'verifies number_of_people_sharing != 0' do
+      expect(shown_product["number_of_people_sharing"]).to be > 0
+    end
+
+    it 'verifies price != 0' do
+      expect(shown_product["price"]).to be > 0
     end
   end
 
