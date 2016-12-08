@@ -36,12 +36,12 @@ class ProductController < ApplicationController
   end
 
   def edit
-    @single_product = Product.editing params[:item]
+    @single_product = Product.visualize params[:item]
     render 'editor'
   end
 
   def save_edit
-    Product.save_edition params
+    Product.save_edition params[:item], params
     redirect_to view_path(item: params[:item])
   end
 end

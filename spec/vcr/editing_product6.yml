@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://infinite-meadow-93515.herokuapp.com//item/583c72ad2dceb80004af9042
+    body:
+      encoding: UTF-8
+      string: name=novo+nome&price=17&quantity=3&number_of_people_sharing=2
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.0p0
+      Content-Length:
+      - '61'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - infinite-meadow-93515.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 08 Dec 2016 21:12:50 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"35bf5e7ab169dcf1e238b82e7469153c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9fb136cb-0fbd-42a3-a3fa-989d8c29a4a1
+      X-Runtime:
+      - '0.033511'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"583c72ad2dceb80004af9042","price":17.0,"number_of_people_sharing":2,"quantity":3,"name":"novo
+        nome"}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 21:12:51 GMT
+recorded_with: VCR 3.0.3
