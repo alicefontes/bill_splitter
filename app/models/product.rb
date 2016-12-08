@@ -5,22 +5,22 @@ class Product
   end
 
   def self.all
-    r = RestClient.get("#{Settings.url}/items")
-    JSON.parse(r.body)
+    response = RestClient.get("#{Settings.url}/items")
+    JSON.parse(response.body)
   end
 
   def self.visualize item
-    r = RestClient.get("#{Settings.url}/item/#{item}")
-    JSON.parse(r.body)
+    response = RestClient.get("#{Settings.url}/item/#{item}")
+    JSON.parse(response.body)
   end
 
   def self.exclude item
-    r = RestClient.delete("#{Settings.url}/item/#{item}")
-    r.code == 200
+    response = RestClient.delete("#{Settings.url}/item/#{item}")
+    response.code == 200
   end
 
   def self.save_edition item, params
-    r = RestClient.put "#{Settings.url}/item/#{item}", name: params[:new_name], price: params[:new_price], quantity: params[:new_quantity], number_of_people_sharing: params[:new_number_of_people_sharing]
-    JSON.parse(r.body)
+    response = RestClient.put "#{Settings.url}/item/#{item}", name: params[:new_name], price: params[:new_price], quantity: params[:new_quantity], number_of_people_sharing: params[:new_number_of_people_sharing]
+    JSON.parse(response.body)
   end
 end

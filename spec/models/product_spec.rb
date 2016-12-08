@@ -14,19 +14,10 @@ RSpec.describe Product, type: :model do
 				expect(produto.empty?).to eq(false)
 			end
 
-      it 'verifies name' do
+      it 'verifies params' do
         expect(produto["name"]).to eq("alo")
-      end
-
-      it 'verifies price' do
         expect(produto["price"]).to eq(20)
-      end
-
-      it 'verifies quantity' do
         expect(produto["quantity"]).to eq(2)
-      end
-
-      it 'verifies number_of_people_sharing' do
         expect(produto["number_of_people_sharing"]).to eq(2)
       end
 		end
