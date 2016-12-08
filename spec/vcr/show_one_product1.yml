@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://infinite-meadow-93515.herokuapp.com//item/583c703a2dceb80004af9040
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (darwin15.6.0 x86_64) ruby/2.3.0p0
+      Host:
+      - infinite-meadow-93515.herokuapp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 08 Dec 2016 21:48:44 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"74c207949af71d7664e55ba002dce238"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 760feb06-8fe7-4fd1-8834-8c961b649961
+      X-Runtime:
+      - '0.007957'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"583c703a2dceb80004af9040","price":60.0,"number_of_people_sharing":2,"quantity":1,"name":"Costela"}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 21:48:44 GMT
+recorded_with: VCR 3.0.3

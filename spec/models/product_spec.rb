@@ -73,34 +73,30 @@ RSpec.describe Product, type: :model do
 	end
 
   context "show one ok?" do
-		let(:product_id) { "5833583505c1fa00040fecc1" }
+		let(:product_id) { "583c703a2dceb80004af9040" }
     let :shown_product do
-      VCR.use_cassette('show_one_product') do
+      VCR.use_cassette('show_one_product1') do
         Product.visualize product_id
       end
     end
 
-    it 'verifies show' do
+    it 'verifies id' do
       expect(shown_product["id"]).to eq(product_id)
     end
 
-    it 'verifies quantity != 0' do
-      expect(shown_product["quantity"]).to be > 0
-    end
-
-    it 'verifies number_of_people_sharing != 0' do
-      expect(shown_product["number_of_people_sharing"]).to be > 0
-    end
-
-    it 'verifies price != 0' do
-      expect(shown_product["price"]).to be > 0
+		it 'verifies params' do
+      expect(shown_product["name"]).to eq("Costela")
+      expect(shown_product["quantity"]).to eq(1)
+      expect(shown_product["number_of_people_sharing"]).to eq(2)
+      expect(shown_product["price"]).to eq(60)
     end
   end
 
   context "delete ok?" do
+		let(:product_id) { "5833583505c1fa00040fecc1" }
     let :product_deleted do
       VCR.use_cassette('delete_product') do
-        Product.exclude "5833583505c1fa00040fecc1"
+        Product.exclude product_id
       end
     end
 
