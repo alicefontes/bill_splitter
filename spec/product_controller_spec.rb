@@ -1,26 +1,94 @@
 require 'rails_helper'
 require 'spec_helper'
-require 'vcr_setup'
+# require 'vcr_setup'
 
 describe ProductController, type: :controller do
 
-	# def make_http_request
-	# #   RestClient.get("https://serene-ocean-20887.herokuapp.com/")
-	# # end
-	#
 	# describe "basic test" do
 	# 	context "ok?" do
-	# 		let :produto do
-	# 			Rails.env = "test"
-	# 			VCR.use_cassette('teste') do
-	# 				# ENV["RAILS_ENV"] = 'development'
-	#
-	# 				get :list
-	# 				# if Rails.env == "development"
-	# 				# get :list
-	# 				# end
+	# 		let :new_product do
+	# 			VCR.use_cassette('lista') do
+	# 				post :new
 	# 			end
 	# 		end
+	# 		it "render" do
+	# 			expect(new_product.status).to eq(200)
+	# 		end
+	# 	end
+	# end
+
+	describe "test render list" do
+		context "ok?" do
+			let :list_products do
+				VCR.use_cassette('lista') do
+					get :list
+				end
+			end
+			it "ok?" do
+				expect(list_products.status).to eq(200)
+			end
+		end
+	end
+
+
+	# describe "test render view" do
+	# 	context "ok?" do
+	# 		let :view_product do
+	# 			VCR.use_cassette('lista') do
+	# 				get :view
+	# 				# como passar o parametro?
+	# 				# "5833583505c1fa00040fecc1"
+	# 			end
+	# 		end
+	# 		it "ok?" do
+	# 			expect(view_product.status).to eq(200)
+	# 		end
+	# 	end
+	# end
+	#
+	# describe "test render delete" do
+	# 	context "ok?" do
+	# 		let :delete_product do
+	# 			VCR.use_cassette('lista') do
+	# 				delete :delete
+	# 			end
+	# 		end
+	# 		it "ok?" do
+	# 			# expect(delete_product.status).to eq(200)
+	# 		end
+	# 	end
+	# end
+	#
+	# describe "test render edit" do
+	# 	context "ok?" do
+	# 		let :edit_product do
+	# 			VCR.use_cassette('lista') do
+	# 				put :edit
+	# 			end
+	# 		end
+	# 		it "ok?" do
+	# 			# expect(edit_product.status).to eq(200)
+	# 		end
+	# 	end
+	# end
+	#
+	#
+	#
+	#
+	#
+
+
+
+
+
+
+
+
+
+
+
+
+
 	# 		# VCR.use_cassette('teste') do
 	# 		#
 	# 		# end
