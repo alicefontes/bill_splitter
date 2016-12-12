@@ -19,20 +19,22 @@ describe ProductController, type: :controller do
 	# end
 
 	describe "controller test" do
-		before do
-			allow(Product).to receive(:all).and_return([
-				{
-					name: 'Product 1',
-					price: 20
-				},
-				{
-					name: 'Product 2',
-					price: 10
-				}
-			])
-		end
+
 
 		context "when listing the products" do
+			before do
+				allow(Product).to receive(:all).and_return([
+					{
+						name: 'Product 1',
+						price: 20
+					},
+					{
+						name: 'Product 2',
+						price: 10
+					}
+				])
+			end
+			
 			it "verifies if the status is right" do
 				get :list
 				expect(response.status).to eq(200)
@@ -73,7 +75,7 @@ describe ProductController, type: :controller do
 			expect(response.status).to eq(200)
 		end
 	end
-	# 
+	#
 	# context "when editing one product" do
 	# 	let (:fake_product_id) {"44353353535"}
 	# 	let (:parameters_edition) do { name: "Batata", price: 30, number_of_people_sharing: 2, quantity: 2 }
@@ -88,6 +90,8 @@ describe ProductController, type: :controller do
 	# 	end
 	# end
 	#
+
+	###########################################################
 	# describe "test render view" do
 	# 	context "ok?" do
 	# 		let :view_product do
@@ -131,23 +135,6 @@ describe ProductController, type: :controller do
 	# 	end
 	# end
 	#
-	#
-	#
-	#
-	#
-
-
-
-
-
-
-
-
-
-
-
-
-
 	# 		# VCR.use_cassette('teste') do
 	# 		#
 	# 		# end
@@ -161,8 +148,6 @@ describe ProductController, type: :controller do
 	# 		end
 	# 	end
 	# end
-
-
 	# describe "show option" do
 	# 	context "has 200 status code if requested" do
 	# 	subject { response.status }
