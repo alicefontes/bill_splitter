@@ -18,7 +18,7 @@ describe ProductController, type: :controller do
 	# 	end
 	# end
 
-	describe "test render list" do
+	describe "controller test" do
 		before do
 			allow(Product).to receive(:all).and_return([
 				{
@@ -32,13 +32,13 @@ describe ProductController, type: :controller do
 			])
 		end
 
-		context "ok?" do
-			it "ok?" do
+		context "when listing the products" do
+			it "verifies if the status is right" do
 				get :list
 				expect(response.status).to eq(200)
 			end
 
-			it "verifies quantity of the list" do
+			it "verifies how many items are on the list" do
 				get :list
 				expect(assigns(:renderme).size).to eq(2)
 			end
