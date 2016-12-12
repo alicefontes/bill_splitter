@@ -16,7 +16,7 @@ class ProductController < ApplicationController
       @answer = "Total para cada um: #{(c.calcular(expression)).round(2)}"
     end
 
-    @product = Product.new_product params
+    @product = Product.new_product product_params
     render 'newproduct'
   end
 
@@ -41,7 +41,11 @@ class ProductController < ApplicationController
   end
 
   def save_edit
-    Product.save_edition params[:item], params
+    Product.save_edition params[:item], product_params
     redirect_to view_path(item: params[:item])
+  end
+
+  def product_params
+    params.permit(:id, :name, :price, :quantity, :number_of_people_sharing)
   end
 end
