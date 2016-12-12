@@ -45,25 +45,48 @@ describe ProductController, type: :controller do
 		end
 	end
 
-# como passar o id???
-	# describe "test render list" do
+	context "when showing one product" do
+		let (:fake_product_id) {"44353353535"}
+		before do
+			expect(Product).to receive(:visualize).with(fake_product_id).and_return({
+					name: 'Product 1',
+					price: 20,
+					quantity: 2,
+					number_of_people_sharing: 3
+				})
+		end
+
+		it "check if gets 200 status" do
+			get :view , item: fake_product_id
+			expect(response.status).to eq(200)
+		end
+	end
+
+	context "when deleting one product" do
+		let (:fake_product_id) {"44353353535"}
+		before do
+			expect(Product).to receive(:exclude).with(fake_product_id)
+		end
+
+		it "check if gets 200 status" do
+			delete :delete , item: fake_product_id
+			expect(response.status).to eq(200)
+		end
+	end
+	# 
+	# context "when editing one product" do
+	# 	let (:fake_product_id) {"44353353535"}
+	# 	let (:parameters_edition) do { name: "Batata", price: 30, number_of_people_sharing: 2, quantity: 2 }
+	# 	end
 	# 	before do
-	# 		allow(Product).to receive(:visualize).and_return({
-	# 				name: 'Product 1',
-	# 				price: 20,
-	# 				quantity: 2,
-	# 				number_of_people_sharing: 3
-	# 			})
+	# 		expect(Product).to receive(:save_edition).with(fake_product_id, parameters_edition).and_return(200)
 	# 	end
 	#
-	# 	context "ok?" do
-	# 		it "ok?" do
-	# 			get :view
-	# 			expect(response.status).to eq(200)
-	# 		end
+	# 	it "check if gets 200 status" do
+	# 		put :save_edit , item: fake_product_id
+	# 		expect(response.status).to eq(200)
 	# 	end
 	# end
-
 	#
 	# describe "test render view" do
 	# 	context "ok?" do

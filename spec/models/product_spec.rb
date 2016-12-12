@@ -43,23 +43,61 @@ RSpec.describe Product, type: :model do
         expect(a).to be > 0
       end
 
-      it 'verifies quantity != 0' do
+      it 'verifies all params of the items != 0' do
         products.each do |p|
           expect(p["quantity"]).to be > 0
+        	expect(p["number_of_people_sharing"]).to be > 0
+      		expect(p["price"]).to be > 0
         end
       end
 
-      it 'verifies number_of_people_sharing != 0' do
-        products.each do |p|
-          expect(p["number_of_people_sharing"]).to be > 0
-        end
-      end
+			it 'verifies the first item of the list' do
+				product = products[1]
+				expect(product["name"]).to eq("Costela")
+				expect(product["price"]).to eq(60.0)
+				expect(product["number_of_people_sharing"]).to eq(2)
+				expect(product["quantity"]).to eq(1)
+			end
 
-      it 'verifies price != 0' do
-        products.each do |p|
-          expect(p["price"]).to be > 0
-        end
-      end
+			it 'verifies the second item of the list' do
+				product = products[2]
+				expect(product["name"]).to eq("Cerveja")
+				expect(product["price"]).to eq(10.0)
+				expect(product["number_of_people_sharing"]).to eq(2)
+				expect(product["quantity"]).to eq(5)
+			end
+
+			it 'verifies the third item of the list' do
+				product = products[3]
+				expect(product["name"]).to eq("Caipi")
+				expect(product["price"]).to eq(17.0)
+				expect(product["number_of_people_sharing"]).to eq(2)
+				expect(product["quantity"]).to eq(3)
+			end
+
+			it 'verifies the fourth item of the list' do
+				product = products[4]
+				expect(product["name"]).to eq("Biscoito")
+				expect(product["price"]).to eq(122.0)
+				expect(product["number_of_people_sharing"]).to eq(2)
+				expect(product["quantity"]).to eq(13)
+			end
+
+			it 'verifies the fifth item of the list' do
+				product = products[5]
+				expect(product["name"]).to eq("Biscoito")
+				expect(product["price"]).to eq(10.35)
+				expect(product["number_of_people_sharing"]).to eq(2)
+				expect(product["quantity"]).to eq(1)
+			end
+
+			it 'verifies the sixth item of the list' do
+				product = products[6]
+				expect(product["name"]).to eq("banana")
+				expect(product["price"]).to eq(25.0)
+				expect(product["number_of_people_sharing"]).to eq(7)
+				expect(product["quantity"]).to eq(3)
+			end
 		end
 	end
 
