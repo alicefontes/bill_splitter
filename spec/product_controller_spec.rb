@@ -4,23 +4,9 @@ require 'vcr_setup'
 
 describe ProductController, type: :controller do
 
-	# describe "test new product" do
-	# 	context "ok?" do
-	# 		let :new_products do
-	# 			VCR.use_cassette('lista') do
-	# 				post :new
-	# 				#(name: "alo", quantity: 2, price: 20, number_of_people_sharing: 2)
-	# 			end
-	# 		end
-	# 		it "render" do
-	# 			expect(new_products.status).to eq(200)
-	# 		end
-	# 	end
-	# end
-
 	describe "controller test" do
 
-		context "when listing the products" do
+		context "when adding a new product" do
 			let (:fake_new_product) do
 				{ name: 'Product 1', price: 20, quantity: 2, number_of_people_sharing: 3 }
 			end
@@ -36,6 +22,65 @@ describe ProductController, type: :controller do
 			end
 
 			it "verifies if it is rendering right" do
+				expect(response).to render_template('newproduct')
+			end
+		end
+#
+#testando parametros nulos (quantidade e numero de pessoas) que nao deveriam dar erro
+#qdo testa o preco nulo continua passando --deveria dar erro
+		context "when adding a new product with no name" do
+			let (:fake_new_product) do
+				{ name: '', price: 20, quantity: 2, number_of_people_sharing: 3 }
+			end
+
+			before do
+				allow(Product).to receive(:new_product).and_return(fake_new_product)
+
+				post :new , fake_new_product
+			end
+
+			it "verifies if the status is right" do
+				expect(response.status).to eq(200)
+			end
+
+			it "verifies if it is rendering right" do
+				expect(response).to render_template('newproduct')
+			end
+		end
+
+		context "when adding a new product with blank quantity" do
+			let (:fake_new_product) do
+				{ name: 'blank quantity', price: 20, quantity: nil, number_of_people_sharing: 3 }
+			end
+
+			before do
+				allow(Product).to receive(:new_product).and_return(fake_new_product)
+
+				post :new , fake_new_product
+			end
+
+			it "verifies if the status is right" do
+				expect(response.status).to eq(200)
+			end
+
+			it "verifies if it is rendering right" do
+				expect(response).to render_template('newproduct')
+			end
+		end
+
+		context "when adding a new product with blank number_of_people_sharing" do
+			let (:fake_new_product) do
+				{ name: 'blank', price: 20, quantity: 3, number_of_people_sharing: nil }
+			end
+
+			before do
+				allow(Product).to receive(:new_product).and_return(fake_new_product)
+
+				post :new , fake_new_product
+			end
+
+			it "verifies if the status is right and if its rendering right" do
+				expect(response.status).to eq(200)
 				expect(response).to render_template('newproduct')
 			end
 		end
@@ -115,15 +160,21 @@ describe ProductController, type: :controller do
 	# 	let (:parameters_edition) do { name: "Batata", price: 30, number_of_people_sharing: 2, quantity: 2 }
 	# 	end
 	# 	before do
-	# 		expect(Product).to receive(:save_edition).with(fake_product_id, parameters_edition).and_return(200)
+	# 		expect(Product).to receive(:save_edition).and_return(parameters_edition)
+	#
+	# 		put :save_edit , fake_product_id , parameters_edition
 	# 	end
 	#
 	# 	it "check if gets 200 status" do
-	# 		put :save_edit , item: fake_product_id
 	# 		expect(response.status).to eq(200)
 	# 	end
+
+	# 	it "verifies if it is rendering right" do
+	# 		expect(response).to render_template('editor')
+	# 	end
 	# end
-	#
+	# #
+
 
 	###########################################################
 	# describe "test render view" do

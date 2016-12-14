@@ -10,10 +10,10 @@ class ProductController < ApplicationController
     if params[:quantity].blank? || params[:number_of_people_sharing].blank?
       @answer = 0.0
     else
-      c = CalculadoraRuby::Calc.new
+      calculator = CalculadoraRuby::Calc.new
       expression = "#{@price}*#{@quantity}/#{@number_of_people_sharing}"
       @total = "Valor total: #{@price*@quantity.round(2)}"
-      @answer = "Total para cada um: #{(c.calcular(expression)).round(2)}"
+      @answer = "Total para cada um: #{(calculator.calcular(expression)).round(2)}"
     end
 
     @product = Product.new_product product_params
