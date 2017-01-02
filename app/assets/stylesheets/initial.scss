@@ -2,9 +2,8 @@
   padding: 20px 0px 20px 0px;
 
   table, th, td {
-  border: 1px solid #e2605D;
-  // color: #8A79BC;
-  text-decoration: none;
+    border: 1px solid #e2605D;
+    text-decoration: none;
   }
 
   td {
@@ -75,9 +74,4 @@
   height: 70px;
   transform: translateX(-50%);
   margin-left: 50%;
-}
-
-.init_icon {
-  // transform: translateX(-50%);
-  // margin-left: 50%;
 }

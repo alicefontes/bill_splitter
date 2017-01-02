@@ -21,10 +21,10 @@ h2 {
 }
 
 .items {
+  margin: 10px 50px 0px 0px;
   text-align: center;
   align-items: center;
   font-size: 25px;
-  margin: 10px 50px 0px 0px;
 }
 
 .form_field {
@@ -42,11 +42,11 @@ h2 {
 }
 
 .show_btn {
+  margin: 0px 0px 0px 0px;
   position: relative;
   align-self: center;
   border: none;
   line-height: 30px;
-  margin: 0px 0px 0px 0px;
   padding: 8px;
   text-align: center;
   font-size: 20px;
@@ -61,12 +61,9 @@ h2 {
   }
 }
 
-
-
 .btn_class {
   position: relative;
   align-self: center;
-  // margin: 0px 0px 0px 0px;
   text-align: center;
   font-size: 20px;
   background-color: transparent;
@@ -80,11 +77,11 @@ h2 {
 }
 
 .initial_btn {
+  margin: 20px 0px 20px 0px;
   position: center;
   align-self: center;
   border: none;
   line-height: 30px;
-  margin: 20px 0px 20px 0px;
   padding: 8px;
   text-align: center;
   font-size: 20px;
@@ -99,12 +96,6 @@ h2 {
     cursor: pointer;
   }
 }
-
-// .product {
-//   margin: -70px 50px 50px 50px;
-//   line-height: 30px;
-//   color: #8A79BC;
-// }
 
 .home_image {
   width: 30px;
