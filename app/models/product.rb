@@ -1,7 +1,7 @@
 class Product
   def self.new_product params
-    r = RestClient.post "#{Settings.url}/items", name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
-    JSON.parse(r.body)
+    response = RestClient.post "#{Settings.url}/items", name: params[:name], price: params[:price], quantity: params[:quantity], number_of_people_sharing: params[:number_of_people_sharing]
+    JSON.parse(response.body)
   end
 
   def self.all

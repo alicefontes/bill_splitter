@@ -15,7 +15,6 @@ class ProductController < ApplicationController
       @total = "Valor total: #{@price*@quantity.round(2)}"
       @answer = "Total para cada um: #{(calculator.calcular(expression)).round(2)}"
     end
-
     @product = Product.new_product product_params
     render 'newproduct'
   end

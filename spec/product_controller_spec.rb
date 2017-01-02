@@ -27,7 +27,7 @@ describe ProductController, type: :controller do
 		end
 #
 #testando parametros nulos (quantidade e numero de pessoas) que nao deveriam dar erro
-#qdo testa o preco nulo continua passando --deveria dar erro
+#qdo testa o preco nulo continua passando --deveria dar erro --pqqqq
 		context "when adding a new product with no name" do
 			let (:fake_new_product) do
 				{ name: '', price: 20, quantity: 2, number_of_people_sharing: 3 }
