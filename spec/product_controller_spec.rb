@@ -83,7 +83,6 @@ describe ProductController, type: :controller do
 			end
 		end
 
-		##
 		context "when listing the products" do
 			before do
 				allow(Product).to receive(:all).and_return([
