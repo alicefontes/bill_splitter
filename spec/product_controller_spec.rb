@@ -25,9 +25,7 @@ describe ProductController, type: :controller do
 				expect(response).to render_template('newproduct')
 			end
 		end
-#
-#testando parametros nulos (quantidade e numero de pessoas) que nao deveriam dar erro
-#qdo testa o preco nulo continua passando --deveria dar erro --pqqqq
+
 		context "when adding a new product with no name" do
 			let (:fake_new_product) do
 				{ name: '', price: 20, quantity: 2, number_of_people_sharing: 3 }
@@ -154,44 +152,4 @@ describe ProductController, type: :controller do
 			expect(response).to render_template('deleted')
 		end
 	end
-
-	# context "when editing one product" do
-	# 	let (:fake_product_id) {"44353353535"}
-	# 	let (:paramsqw) do
-	# 		{ item: fake_product_id, name: "Batata", price: 30, number_of_people_sharing: 2, quantity: 2 }
-	# 	end
-	#
-	# 	before do
-	# 		allow(Product).to receive(:save_edition).with(fake_product_id, paramsqw)
-	# 		put :save_edit, paramsqw
-	# 	end
-	#
-	# 	it "check if gets 200 status" do
-	# 		expect(response.status).to eq(200)
-	# 	end
-	#
-	# 	it "verifies if it is rendering right" do
-	# 		expect(response).to render_template('editor')
-	# 	end
-	# end
 end
-
-# context "when adding a new product" do
-# 	let (:fake_new_product) do
-# 		{ name: 'Product 1', price: 20, quantity: 2, number_of_people_sharing: 3 }
-# 	end
-#
-# 	before do
-# 		allow(Product).to receive(:new_product).and_return(fake_new_product)
-#
-# 		post :new , fake_new_product
-# 	end
-#
-# 	it "verifies if the status is right" do
-# 		expect(response.status).to eq(200)
-# 	end
-#
-# 	it "verifies if it is rendering right" do
-# 		expect(response).to render_template('newproduct')
-# 	end
-# end
