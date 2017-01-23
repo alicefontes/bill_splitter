@@ -151,24 +151,4 @@ describe ProductController, type: :controller do
 			expect(response).to render_template('deleted')
 		end
 	end
-
-	# context "when editing one product" do
-	# 	let (:fake_product_id) {"44353353535"}
-	# 	let (:paramsqw) do
-	# 		{ item: fake_product_id, name: "Batata", price: 30, number_of_people_sharing: 2, quantity: 2 }
-	# 	end
-	#
-	# 	before do
-	# 		allow(Product).to receive(:save_edition).with(fake_product_id, paramsqw)
-	# 		put :save_edit, paramsqw
-	# 	end
-	#
-	# 	it "check if gets 200 status" do
-	# 		expect(response.status).to eq(200)
-	# 	end
-	#
-	# 	it "verifies if it is rendering right" do
-	# 		expect(response).to render_template('editor')
-	# 	end
-	# end
 end

@@ -1,0 +1,49 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Cálculo do tempo para poder voltar a dirigir
+</h2>
+
+<div class="text">Resultado:</br>
+  Você deve esperar <%= @beer_quantity %> horas para dirigir. </br> </br>
+  Deseja ser avisado quando esse tempo acabar?
+</div>
+
+</br>
+
+<div class="btn_class" id="avisa">
+  <input type="submit" class="back_btn" value="Me avise" />
+</div>
+
+<div class="btn_class">
+  <form action=<%= list_path %> method="GET">
+    <input type="submit" class="back_btn" value="Duvido! Ver lista"/>
+  </form>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <input type="submit" class="back_btn" value="Voltar para o início"/>
+    </form>
+  </div>
+</div>
+
+<script>
+
+var numHoras = <%=@beer_quantity*1000*3600%>
+
+var startCount = function() {
+  window.setTimeout(myAlert, numHoras);
+}
+
+var clickedButton = document.getElementById("avisa");
+
+document.getElementById("avisa").addEventListener("click", startCount, false);
+
+function myAlert() {
+    alert('Já pode dirigir!');
+}
+</script>

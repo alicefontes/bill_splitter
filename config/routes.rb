@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   delete '/delete/:item', to: 'product#delete', as: :delete
   get '/edit/:item', to: 'product#edit', as: :edit
   put '/save_edit/:item', to: 'product#save_edit', as: :save_edit
+  get '/drinking', to: 'product#drunk', as: :drunk
+  post '/result', to: 'product#result', as: :newresult
 end

@@ -1,0 +1,36 @@
+<h1>
+  Bill Splitter
+</h1>
+
+<h2>
+  Cálculo do tempo para poder voltar a dirigir
+</h2>
+
+<div class="text">Quantas cervejas você tomou?
+</div>
+
+<div class="items">
+  <form action=<%= newresult_path %> method="POST">
+    <div class="form_field">
+      <input class="input" type="text" placeholder="Quantidade" id="beer_quantity_id" name="beer_quantity" value="<%= @beer_quantity%>" />
+    </div>
+    <div class="form_field">
+      <input type="submit" class="drunk_btn" value="Calcular"/>
+    </div>
+  </form>
+</div>
+
+</br>
+<div class="btn_class">
+  <form action=<%= list_path %> method="GET">
+    <input type="submit" class="back_btn" value="Não lembro! Ver lista"/>
+  </form>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action="/" method="GET">
+      <input type="submit" class="back_btn" value="Voltar para o início"/>
+    </form>
+  </div>
+</div>

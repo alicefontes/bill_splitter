@@ -27,7 +27,6 @@
     <div class="form_field">
       <input type="submit" class="btn" value="Split!"/>
     </div>
-    <span>
   </form>
 </div>
 
@@ -36,6 +35,14 @@
     <form action=<%= list_path %> method="GET">
       <%= image_tag "orange-beer-256.png", class: "home_image"%>
       <input type="submit" class="show_btn" value="Ver produtos"/>
+    </form>
+  </div>
+</div>
+
+<div class="items">
+  <div class="form_field">
+    <form action=<%= drunk_path %> method="GET">
+      <input type="submit" class="drink_btn" value="To dirigindo, quero beber"/>
     </form>
   </div>
 </div>

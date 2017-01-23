@@ -101,3 +101,52 @@ h2 {
   width: 30px;
   height: 30px;
 }
+
+.drink_btn {
+  font-family: Avenir;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  align-self: center;
+  border: none;
+  line-height: 30px;
+  padding: 6px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  // font: 100% Avenir;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.drunk_btn {
+  border: none;
+  padding: 8px 4px 8px 4px;
+  width: 260px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #8A79BC;
+  color: white;
+  outline: none;
+  font-size: 20px;
+  position: relative;
+  margin: 0px 0px 10px 0px;
+  font-family: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text {
+  margin: 30px 0px 30px 0px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
